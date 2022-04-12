@@ -10,14 +10,35 @@ class Queue:
     def __len__(self):
         return self.__length
 
+    def __str__(self):
+        return f"Queue(len={self.__length}, value={self.head_value})"
+
     def enqueue(self, value):
-        first_value = Node(value)
-        first_value.next = self.head_value
-        self.head_value = first_value
+        # This func insert value in the end of queue
+        last_value = Node(value)
+        current_value = self.head_value
+
+        if self.__len__() == 0:
+            new_value = Node(value)
+            new_value.next = self.head_value
+            self.head_value = new_value
+            self.__length += 1
+
+            return self.head_value
+
+        while current_value.next:
+            current_value = current_value.next
+        current_value.next = last_value
         self.__length += 1
 
-    def dequeue(self):
-        """Aqui irá sua implementação"""
+    # def dequeue(self):
+        # value_to_be_removed = self.head_value
+        # # value_to_be_removed = "eiei"
+        # if value_to_be_removed:
+        #     self.head_value = self.head_value.next
+        #     value_to_be_removed.next = None
+        #     self.__length -= 1
+        # return value_to_be_removed.value
 
     def search(self, index):
         """Aqui irá sua implementação"""
