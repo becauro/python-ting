@@ -1,11 +1,15 @@
 # For local evaluator
 from ting_file_management.node import Node
 
+# For manual test local
+# from node import Node
+
 
 class Queue:
     def __init__(self):
         self.head_value = None
         self.__length = 0
+        self.queue = set()  # Here
 
     def __len__(self):
         return self.__length
@@ -16,21 +20,38 @@ class Queue:
     def enqueue(self, value):
         # This func insert value in the end of queue
         last_value = Node(value)
-        current_value = self.head_value
+        exist = self.already_exist(value, len(list(self.queue)))  # Here
 
-        # If queue is empty, the value is inserted directly into its head
-        if self.__len__() == 0:
-            new_value = Node(value)
-            new_value.next = self.head_value
-            self.head_value = new_value
+        if not exist:
+            current_value = self.head_value
+
+            # If queue is empty, the value is inserted directly into its head
+            if self.__len__() == 0:
+                new_value = Node(value)
+                new_value.next = self.head_value
+                self.head_value = new_value
+                self.__length += 1
+
+                # return self.head_value
+                return
+
+            while current_value.next:
+                current_value = current_value.next
+            current_value.next = last_value
             self.__length += 1
 
-            return self.head_value
+    def already_exist(self, value, length):  # Here
+        # This func is called by enqueue()
+        # This func help to throw out duplicate nodes
 
-        while current_value.next:
-            current_value = current_value.next
-        current_value.next = last_value
-        self.__length += 1
+        print(self.queue)
+        self.queue.add(value)
+        if len(list(self.queue)) > length:
+            print("New item")
+            return False
+        else:
+            print("Item already exist")
+            return True
 
     def dequeue(self):
         value_to_be_removed = self.head_value
