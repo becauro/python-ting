@@ -18,6 +18,7 @@ class Queue:
         last_value = Node(value)
         current_value = self.head_value
 
+        # If queue is empty, the value is inserted directly into its head
         if self.__len__() == 0:
             new_value = Node(value)
             new_value.next = self.head_value
@@ -31,14 +32,13 @@ class Queue:
         current_value.next = last_value
         self.__length += 1
 
-    # def dequeue(self):
-        # value_to_be_removed = self.head_value
-        # # value_to_be_removed = "eiei"
-        # if value_to_be_removed:
-        #     self.head_value = self.head_value.next
-        #     value_to_be_removed.next = None
-        #     self.__length -= 1
-        # return value_to_be_removed.value
+    def dequeue(self):
+        value_to_be_removed = self.head_value
+        if value_to_be_removed:
+            self.head_value = self.head_value.next
+            value_to_be_removed.next = None
+            self.__length -= 1
+        return value_to_be_removed.value
 
     def search(self, index):
         """Aqui irá sua implementação"""
