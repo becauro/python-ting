@@ -9,7 +9,8 @@ class Queue:
     def __init__(self):
         self.head_value = None
         self.__length = 0
-        self.queue = set()  # Here
+        self.queue = set()
+        self.files_stats = []  # Here
 
     def __len__(self):
         return self.__length
@@ -20,7 +21,7 @@ class Queue:
     def enqueue(self, value):
         # This func insert value in the end of queue
         last_value = Node(value)
-        exist = self.already_exist(value, len(list(self.queue)))  # Here
+        exist = self.already_exist(value, len(list(self.queue)))
 
         if not exist:
             current_value = self.head_value
@@ -40,7 +41,7 @@ class Queue:
             current_value.next = last_value
             self.__length += 1
 
-    def already_exist(self, value, length):  # Here
+    def already_exist(self, value, length):
         # This func is called by enqueue()
         # This func help to throw out duplicate nodes
 
@@ -64,18 +65,6 @@ class Queue:
     def search(self, index):
         value_returned = None
         value_to_be_returned = self.head_value
-        # if value_to_be_returned:
-        #     if 0 <= index <= self.__len__():
-        #         while index > 0 and value_to_be_returned.next:
-        #             value_to_be_returned = value_to_be_returned.next
-        #             index -= 1
-        #     # else:
-        #     #     raise IndexError("invalid index")
-
-        #     if value_to_be_returned:
-        #         value_returned = value_to_be_returned.value
-        # # else:
-        # #     raise IndexError("Thre is no node in the queue")
 
         if value_to_be_returned and 0 <= index <= self.__len__():
             while index > 0 and value_to_be_returned.next:
@@ -88,3 +77,6 @@ class Queue:
             raise IndexError("There is no node in the queue")
 
         return value_returned
+
+    def set_files_stats(self, file_stat):
+        self.files_stats.append(file_stat)

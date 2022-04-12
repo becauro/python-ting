@@ -3,15 +3,16 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    instance.enqueue(path_file)
+    instance.enqueue(path_file)  # Instantiate file
+    file_stats = {
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(txt_importer(path_file)),
+        "linhas_do_arquivo": txt_importer(path_file),
+    }
 
     sys.stdout.write(
         str(
-            {
-                "nome_do_arquivo": path_file,
-                "qtd_linhas": len(txt_importer(path_file)),
-                "linhas_do_arquivo": txt_importer(path_file),
-            }
+            file_stats
         )
     )
 
@@ -25,19 +26,6 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-
-    # if node is None:
-    #     sys.stderr.write("Posição inválida")
-    # else:
-    #     sys.stdout.write(
-    #         str(
-    #             {
-    #                 "nome_do_arquivo": node,
-    #                 "qtd_linhas": len(txt_importer(node)),
-    #                 "linhas_do_arquivo": txt_importer(node),
-    #             }
-    #         )
-    #     )
 
     try:
         node = instance.search(position)
