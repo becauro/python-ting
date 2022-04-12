@@ -59,7 +59,7 @@ class Queue:
             self.head_value = self.head_value.next
             value_to_be_removed.next = None
             self.__length -= 1
-        return value_to_be_removed.value
+            return value_to_be_removed.value
 
     def search(self, index):
         value_returned = None
