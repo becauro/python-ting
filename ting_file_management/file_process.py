@@ -13,7 +13,8 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    removed = instance.dequeue()
+    sys.stdout.write(f"Arquivo {removed} removido com sucesso\n")
 
 
 def file_metadata(instance, position):
