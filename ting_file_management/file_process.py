@@ -3,7 +3,7 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    # project = instance()
+    instance.enqueue(path_file)
 
     sys.stdout.write(str({
             "nome_do_arquivo": path_file,
