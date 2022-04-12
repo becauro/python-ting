@@ -64,17 +64,27 @@ class Queue:
     def search(self, index):
         value_returned = None
         value_to_be_returned = self.head_value
-        if value_to_be_returned:
-            if 0 <= index <= self.__len__():
-                while index > 0 and value_to_be_returned.next:
-                    value_to_be_returned = value_to_be_returned.next
-                    index -= 1
-            else:
-                raise IndexError("invalid index")
+        # if value_to_be_returned:
+        #     if 0 <= index <= self.__len__():
+        #         while index > 0 and value_to_be_returned.next:
+        #             value_to_be_returned = value_to_be_returned.next
+        #             index -= 1
+        #     # else:
+        #     #     raise IndexError("invalid index")
+
+        #     if value_to_be_returned:
+        #         value_returned = value_to_be_returned.value
+        # # else:
+        # #     raise IndexError("Thre is no node in the queue")
+
+        if value_to_be_returned and 0 <= index <= self.__len__():
+            while index > 0 and value_to_be_returned.next:
+                value_to_be_returned = value_to_be_returned.next
+                index -= 1
 
             if value_to_be_returned:
                 value_returned = value_to_be_returned.value
         else:
-            raise IndexError("Thre is no node in the queue")
+            raise IndexError("There is no node in the queue")
 
         return value_returned
