@@ -1,5 +1,9 @@
 import sys
-from ting_file_management.file_management import txt_importer
+# For local evaluator
+# from ting_file_management.file_management import txt_importer
+
+# For manual test local
+from file_management import txt_importer
 
 
 def process(path_file, instance):
@@ -9,6 +13,8 @@ def process(path_file, instance):
         "qtd_linhas": len(txt_importer(path_file)),
         "linhas_do_arquivo": txt_importer(path_file),
     }
+
+    instance.set_files_stats(file_stats)
 
     sys.stdout.write(
         str(

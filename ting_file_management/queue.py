@@ -1,8 +1,8 @@
 # For local evaluator
-from ting_file_management.node import Node
+# from ting_file_management.node import Node
 
 # For manual test local
-# from node import Node
+from node import Node
 
 
 class Queue:
@@ -78,5 +78,5 @@ class Queue:
 
         return value_returned
 
-    def set_files_stats(self, file_stat):
-        self.files_stats.append(file_stat)
+    def set_files_stats(self, file_data):
+        self.files_stats.append(file_data)
