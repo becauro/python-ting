@@ -41,4 +41,12 @@ class Queue:
         return value_to_be_removed.value
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        value_returned = None
+        value_to_be_returned = self.head_value
+        if value_to_be_returned:
+            while index > 0 and value_to_be_returned.next:
+                value_to_be_returned = value_to_be_returned.next
+                index -= 1
+            if value_to_be_returned:
+                value_returned = value_to_be_returned.value
+        return value_returned
