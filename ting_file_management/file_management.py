@@ -1,4 +1,6 @@
+# import re
 import sys
+
 
 file_lines_without_n = []
 
@@ -19,6 +21,16 @@ def txt_importer(path_file):
             return file_lines_without_n
         except Exception:
             sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
+
+
+# def check_word_in_file_data(word, file_data_list):
+#     ocorrencias = []
+
+#     for i in range(len(file_data_list)):
+#         if re.search(file_data_list[i].lower(), word.lower()):
+#             ocorrencias.append({"linha": i + 1})
+
+#     return ocorrencias
 
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
 import sys
 # For local evaluator
-# from ting_file_management.file_management import txt_importer
+from ting_file_management.file_management import txt_importer
 
 # For manual test local
-from file_management import txt_importer
+# from file_management import txt_importer
 
 
 def process(path_file, instance):

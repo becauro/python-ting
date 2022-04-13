@@ -1,8 +1,10 @@
 # For local evaluator
-# from ting_file_management.node import Node
+from ting_file_management.node import Node
 
 # For manual test local
-from node import Node
+# from node import Node
+# import sys
+# sys.path.append("../ting_file_management")
 
 
 class Queue:
