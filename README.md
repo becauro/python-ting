@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do projeto TING(Trybe is not Google)!
+# Boas vindas ao repositório do projeto TING!
 
 
 # Habilidades (Hard skills) desse projeto:
