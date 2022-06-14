@@ -16,7 +16,7 @@
 
 ## Sobre o projeto
 
-Por se tratar de um projeto (bootcamp) feito através da @Trybe, o nome do sistema é **ting** (`Trybe Is Not Google`).
+Por se tratar de um projeto (bootcamp) feito através da @Tryber, o nome do sistema é **ting** (`Trybe Is Not Google`).
 
 Trata -se de um programa que simula o algoritmo de indexação de documentos similar ao do Google. Ou seja, um programa que permita anexar arquivos de texto e posteriormente opere funções de busca sobre tais arquivos
 
