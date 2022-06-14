@@ -1,7 +1,7 @@
 # Boas vindas ao repositório do projeto TING!
 
 
-# Habilidades (Hard skills) desse projeto:
+## Habilidades (Hard skills) desse projeto:
 
 - Manipular Pilhas
 
